@@ -1,5 +1,7 @@
 # Recovering Zyxel EX5601-T0 supervisor/root password (Wind3 ACDZ firmware)
 
+> **Disclaimer:** This guide is provided for educational and personal use only. Accessing a device you do not own or are not authorized to administer may be illegal in your jurisdiction. The authors assume no responsibility for damages, data loss, bricked devices, or any misuse of the information provided. Proceed at your own risk.
+
 Tested on V5.70(ACDZ.4.3)C0. Should work on any ACDZ ≤ 5.1.
 
 ## Requirements
@@ -141,3 +143,20 @@ ssh root@192.168.1.1
 ## Cleanup
 
 To restore normal boot, flip `EngDebugFlag` back to `00` using the same Python script (swap `old` and `new`) and write it back to `mtd1` following the same procedure.
+
+---
+
+## References
+
+The procedure in this guide is based on information gathered from the following sources. Links may change over time — verify before downloading.
+
+- **OpenWrt Wiki & Forum** — device page and community threads for the Zyxel EX5601-T0:
+  https://openwrt.org/toh/zyxel/ex5601-t0
+- **OpenWrt Forum — EX5601-T0 thread** (ubootmod, UART boot, ZHAL debug):
+  https://forum.openwrt.org/t/zyxel-ex5601-t0/
+- **981213/mtk_uartboot** — UART boot tool for MediaTek SoCs:
+  https://github.com/981213/mtk_uartboot
+- **981213/tf-a-mtk** — pre-built TF-A BL2 binaries for MediaTek (DDR4 RAM variant):
+  https://github.com/981213/tf-a-mtk
+- **OpenWrt 23.05.5 downloads — mediatek/filogic**:
+  https://downloads.openwrt.org/releases/23.05.5/targets/mediatek/filogic/
